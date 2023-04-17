@@ -82,11 +82,11 @@ class TicTacToe:
             if winner:
                 self.print_board()
                 print("Player", winner, "wins!")
-                self.update_scores(winner)  # Update scores
-                self.print_scores()  # Print scores
+                self.update_scores(winner)
+                self.print_scores()
                 replay = input("Do you want to play again? (y/n): ")
                 if replay.lower() == 'y':
-                    self.reset_game_state()  # Reset game state except for scores
+                    self.reset_game_state()
                 else:
                     print("Thank you for playing Tic-Tac-Toe!")
                     break
