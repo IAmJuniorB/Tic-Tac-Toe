@@ -23,13 +23,13 @@
     - print_scores(): Prints the current scores.
     - play(): Starts the game loop and manages the flow of the game, including handling player moves, checking for wins or draws, updating scores, and offering replay option.
 
-The program also includes a __main__ block that creates an instance of the TicTacToe class and starts the game by calling the play() method.
+- The program also includes a __main__ block that creates an instance of the TicTacToe class and starts the game by calling the play() method.
 Dependencies
 
-The program does not have any external dependencies and only requires a Python interpreter to run.
+- The program does not have any external dependencies and only requires a Python interpreter to run.
 
 # License
 
-This program is released under the MIT License. You are free to use, modify, and distribute the code as long as you include the original license in your distribution. Refer to the LICENSE file for more information.
+- This program is released under the MIT License. You are free to use, modify, and distribute the code as long as you include the original license in your distribution. Refer to the LICENSE file for more information.
 
 Enjoy!
