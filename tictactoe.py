@@ -8,17 +8,6 @@ class TicTacToe:
         players (list): List of players ('X' and 'O').
         current_player (int): Index of the current player in the players list.
         scores (dict): Dictionary to keep track of players' scores.
-
-    Methods:
-        print_board(): Print the current state of the Tic-Tac-Toe board.
-        make_move(row, col): Make a move on the Tic-Tac-Toe board.
-        get_move(): Get user input for row and column to make a move.
-        check_win(): Check if any player has won the game.
-        is_game_over(): Check if the game is over (board is fully occupied).
-        reset_game_state(): Reset the game state (except for scores) for a new game.
-        update_scores(winner): Update the scores based on the winner of the game.
-        print_scores(): Print the current scores of the players.
-        play(): Start the Tic-Tac-Toe game and handle game logic.
     """
     BOARD_SIZE = 3
 
@@ -38,8 +27,8 @@ class TicTacToe:
         """Make a move on the game board.
 
         Args:
-            row (int): The row index of the move (0-2).
-            col (int): The column index of the move (0-2).
+            row (int): The row index of the move (1-3).
+            col (int): The column index of the move (1-3).
 
         Returns:
             bool: True if the move is valid and made successfully, False otherwise.
