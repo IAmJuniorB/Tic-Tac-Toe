@@ -1,43 +1,46 @@
-board = [[" ", " ", " "], [" ", " ", " "],[" ", " ", " "]]
+    def reset_game_state(self):
+        self.board = [[" " for _ in range(self.BOARD_SIZE)] for _ in range(self.BOARD_SIZE)]
+        self.current_player = 0
 
-def printBoard():
-    for row in board:
-        print(row)
+    def update_scores(self, winner):
+        if winner:
+            self.scores[winner] += 1
 
-def makeMove(player, row, col):
-    if board[row][col] == " ":
-        board[row][col] = player
+    def print_scores(self):
+        print("Scores:")
+        for player, score in self.scores.items():
+            print("Player", player, ": ", score)
 
-def win():
-    #horizontals first
-    for row in board:
-        if row[0] == row[1] and row[1] == row[2] and row[0] != " ":
-            return row[0]
+    def play(self):
+        print("Welcome to Tic-Tac-Toe!")
+        while True:
+            self.print_board()
+            row, col = self.get_move()
+            if self.make_move(row, col):
+                self.current_player = (self.current_player + 1) % len(self.players)
+            else:
+                print("Invalid move. The selected cell is already occupied. Please choose another cell.")
+                continue
 
-    #verticals
-    for col in range(3):
-        if board[0][col] == board[1][col] and board[1][col] == board[2][col] and board[0][col] != " ":
-            return board[0][col]
+            winner = self.check_win()
+            if winner:
+                self.print_board()
+                print("Player", winner, "wins!")
+                self.update_scores(winner)  # Update scores
+                self.print_scores()  # Print scores
+                replay = input("Do you want to play again? (y/n): ")
+                if replay.lower() == 'y':
+                    self.reset_game_state()  # Reset game state except for scores
+                else:
+                    print("Thank you for playing Tic-Tac-Toe!")
+                    break
 
-    if board[0][0] == board[1][1] and board[1][1] == board[2][2] and board[0][0] != " ":
-        return board[0][0]
-
-    if board[2][0] == board[1][1] and board[1][1] == board[0][2] and board[2][0] != " ":
-        return board[0][0]
-
-    for row in board:
-        for slot in row:
-            if slot == " ":
-                return " " #game is still ongoing
-    return "draw"
-
-
-players = ["X", "O"]
-player = 0
-while win() == " ":
-    printBoard()
-    row = int(input("What row?"))
-    col = int(input("What col?"))
-    makeMove(players[player], row-1, col-1)
-    player = (player + 1) % len(players)
-printBoard()
+            if self.is_game_over():
+                self.print_board()
+                print("It's a draw!")
+                replay = input("Do you want to play again? (y/n): ")
+                if replay.lower() == 'y':
+                    self.reset_game_state()  # Reset game state except for scores
+                else:
+                    print("Thank you for playing Tic-Tac-Toe!")
+                    break
