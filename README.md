@@ -4,9 +4,9 @@
 
 # Usage
 
-- To play the game, run the program using a Python interpreter. The game will start with a welcome message and an empty game board. Players take turns entering their moves by specifying the row and column of their desired move using integers from 1 to 3. The game validates the input and updates the game board accordingly.
+- To play the game, run the program using a Python interpreter. The game will start with a welcome message and an empty game board. Players take turns entering their moves by specifying the row and column of their desired move using integers from 1 to 3 or, if using GUI application, clicking desired square. The game validates the input and updates the game board accordingly.
 
-- The game ends when there is a winner or a draw. The program will prompt the players if they want to play again. If they choose to play again, the game board will be reset, but the scores will be retained. If they choose not to play again, the program will display a farewell message and exit.
+- The game ends when there is a winner or a draw. The program will prompt the players if they want to play again or player can click "reset" if using GUI app. If they choose to play again, the game board will be reset, but the scores will be retained. If they choose not to play again, the program will display a farewell message and exit.
 
 # Class Description
 
